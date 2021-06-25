@@ -52,7 +52,7 @@ that allow to escape attacks.
   - [ ] Use [autoheal](https://github.com/willfarrell/docker-autoheal)
 - [ ] Pin _virtually all_ versions
   - [ ] Explicitly specify base image version
-  - [ ] Use [lock files](https://myers.io/2019/01/13/what-is-the-purpose-of-a-lock-file-for-package-managers/#:~:text=lock%20.,lock%20file%20and%20install%20those.)(https://myers.io/2019/01/13/what-is-the-purpose-of-a-lock-file-for-package-managers/#:~:text=lock%20.,lock%20file%20and%20install%20those.)
+  - [ ] Use [lock files](https://myers.io/2019/01/13/what-is-the-purpose-of-a-lock-file-for-package-managers)
   - [ ] See [checklists for specific tools](#specific-checklists)
 - [ ] Use shell with addtional flags to impruve robustness
   - See [The Eeuo pipefail option and best practice to write a shell script](https://transang.me/best-practice-to-make-a-shell-script/)
