@@ -1,0 +1,10 @@
+# Ignore all
+*
+
+# And add some specifid files
+!app/
+!poetry.lock
+!pyproject.toml
+
+# Ignore temporary files from app directory
+**/*.pyc

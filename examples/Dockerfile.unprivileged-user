@@ -1,0 +1,11 @@
+# Ubuntu example
+FROM ubuntu:18.04
+
+RUN useradd --user-group --no-log-init --system app
+USER app
+
+# Alpine example
+FROM alpine:3.14
+
+RUN addgroup -S app && adduser -S -G app app
+USER app

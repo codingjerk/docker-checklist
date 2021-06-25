@@ -1,0 +1,9 @@
+FROM ubuntu:18.04
+
+HEALTHCHECK \
+    --interval=1m \
+    --retries=10 \
+    --timeout=10s \
+    CMD curl --fail "http://127.0.0.1:8000" || exit 1
+
+CMD ["python", "webserver.py", "8000"]
