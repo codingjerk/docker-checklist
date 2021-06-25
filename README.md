@@ -30,7 +30,7 @@ but it's not so important.
 
 ## Security
 
-> Security matters, and there are no excuses.
+> Security matters, and there are no excuses
 
 Docker containers are [quite secure](https://docs.docker.com/engine/security/)
 itself, but there are vulnerabilities in docker daemon itself,
