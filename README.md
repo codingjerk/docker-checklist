@@ -29,17 +29,17 @@ but it's not so important.
 - [ ] Reduce number of image layers
   - [ ] Combine repeated commands (`RUN` with `\ &&`, `ENV` with ` \`, etc.)
 
-## Security
+## Performance
 
-> Security matters, and there are no excuses
+> Building image faster as well as running application in container faster
 
-Docker containers are [quite secure](https://docs.docker.com/engine/security/)
-itself, but there are vulnerabilities in docker daemon itself,
-that allow to escape attacks.
+Build performance is really important, cause it provide
+better development experience and allow to speed up CI cycle.
 
-- [ ] Use trusted base images
-- [ ] Build using unprivileged user
-- [ ] Run final process from unprivileged user ([Dockerfile](examples/Dockerfile.unprivileged-user))
+- [ ] Place instructions that are less likely to change (and easier to cache) first
+  - [ ] Install dependencies first, then copy application sources (see [documentation](https://docs.docker.com/get-started/09_image_best/#layer-caching))
+- [ ] Prefer [exec form](https://docs.docker.com/engine/reference/builder/#cmd) for `CMD`, `ENTRYPOINT` and `RUN` instructions
+- [ ] Place `ENV` instructions as late as possible
 
 ## Robustness
 
@@ -62,6 +62,18 @@ that allow to escape attacks.
 - [ ] Use CI tool to build and publish image
 - [ ] Do **not** use `latest` tag, always explicitly tag images
 
+## Security
+
+> Security matters, and there are no excuses
+
+Docker containers are [quite secure](https://docs.docker.com/engine/security/)
+itself, but there are vulnerabilities in docker daemon itself,
+that allow to escape attacks.
+
+- [ ] Use trusted base images
+- [ ] Build using unprivileged user
+- [ ] Run final process from unprivileged user ([Dockerfile](examples/Dockerfile.unprivileged-user))
+
 ## Usability
 
 > Making image easier to use
@@ -72,18 +84,6 @@ that allow to escape attacks.
 - [ ] Add a development image
   - Mount source direcory to development container as running
   - Enable *debug mode*, *autoreload*, increase log verbosity
-
-## Performance
-
-> Building image faster as well as running application in container faster
-
-Build performance is really important, cause it provide
-better development experience and allow to speed up CI cycle.
-
-- [ ] Place instructions that are less likely to change (and easier to cache) first
-  - [ ] Install dependencies first, then copy application sources (see [documentation](https://docs.docker.com/get-started/09_image_best/#layer-caching))
-- [ ] Prefer [exec form](https://docs.docker.com/engine/reference/builder/#cmd) for `CMD`, `ENTRYPOINT` and `RUN` instructions
-- [ ] Place `ENV` instructions as late as possible
 
 ## Linting
 
