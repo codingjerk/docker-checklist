@@ -11,6 +11,7 @@
   - [Apk](#apk) (Alpine Linux)
   - [Apt-get](#apt-get) (Ubuntu / Debian)
   - [Python](#python)
+  - [Rust](#rust)
 
 ## Image size
 
