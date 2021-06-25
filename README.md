@@ -6,6 +6,7 @@
 - [ ] [Keep build fast](#performance)
 - [ ] [Make build reproducible](#robustness)
 - [ ] [Improve security](#security)
+- [ ] [Improve usability](#usablitiy)
 - [ ] [Setup linting](#linting)
 - [ ] See [checklists for specific tools](#specific-checklists)
   - [Apk](#apk) (Alpine Linux)
@@ -58,10 +59,19 @@ that allow to escape attacks.
   - See [The Eeuo pipefail option and best practice to write a shell script](https://transang.me/best-practice-to-make-a-shell-script/)
   - [ ] For bash: `SHELL ["/bin/bash", "-Eeuo", "pipefail", "-c"]`
   - [ ] For ash (alpine): `SHELL ["/bin/ash", "-eo", "pipefail", "-c"]`
+- [ ] Use CI tool to build and publish image
+- [ ] Do **not** use `latest` tag, always explicitly tag images
+
+## Usability
+
+> Making image easier to use
+
 - [ ] Expose used ports
   - [ ] Prefer common, traditional ports
   - [ ] Use port 8080 for http (see [List of TCP and UDP port numbers](https://www.wikiwand.com/en/List_of_TCP_and_UDP_port_numbers))
-- [ ] Use CI tool to build and publish image
+- [ ] Add a development image
+  - Mount source direcory to development container as running
+  - Enable *debug mode*, *autoreload*, increase log verbosity
 
 ## Performance
 
