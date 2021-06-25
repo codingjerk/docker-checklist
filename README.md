@@ -61,6 +61,7 @@ that allow to escape attacks.
 - [ ] Expose used ports
   - [ ] Prefer common, traditional ports
   - [ ] Use port 8080 for http (see [List of TCP and UDP port numbers](https://www.wikiwand.com/en/List_of_TCP_and_UDP_port_numbers))
+- [ ] Use CI tool to build and publish image
 
 ## Performance
 
