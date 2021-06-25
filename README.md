@@ -26,7 +26,7 @@ but it's not so important.
 - [ ] Use [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [ ] Use *whitelist* [dockerignore](examples/.dockerignore)
 - [ ] Reduce number of image layers
-  - [ ] Combine repeated commands (`RUN` with '\ &&', `ENV` with ' \', etc.)
+  - [ ] Combine repeated commands (`RUN` with `\ &&`, `ENV` with ` \`, etc.)
 
 ## Security
 
