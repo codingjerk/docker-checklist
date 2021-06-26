@@ -93,6 +93,25 @@ that allow to escape attacks.
 - [ ] Run linting in CI pipeline
 - [ ] Lint your `entrypoint`, `healthcheck` and other scripts
 
+## Running
+
+> Check if you are using `docker run` correctly
+
+### For foreground / attached (interactive) containers
+
+- [ ] Use `--rm`, `-it`
+
+### For background / detached (daemon) containers
+
+- [ ] Specify name: `--name=app`
+- [ ] Make sure container will restart on failure: `--restart=<on-failure|always|unless-stopped>`
+- [ ] Prevent resource depletion
+  - [ ] Limit memory usage: `--memory=1G` (upper bound) and `--memory-reservation=100M` (lower bound)
+  - [ ] Limit CPU usage: `--cpus=0.5` / `--cpus=16`
+  - [ ] Set CPU usage priority: `--cpu-shares=512` (see [documentation](https://docs.docker.com/engine/reference/run/#cpu-share-constraint))
+  - [ ] Set I/O priority: `--blkio-weight=100` (see [documentation](https://docs.docker.com/engine/reference/run/#block-io-bandwidth-blkio-constraint))
+  - [ ] Configure log rotation [globally](examples/docker.logging.json) or [per-container](examples/logging.bash)
+
 ## Specific Сhecklists
 
 ### Apk
