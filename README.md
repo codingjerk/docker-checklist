@@ -137,6 +137,9 @@ that allow to escape attacks.
   - `RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -`
 - [ ] Store virtualenvs in project's root: `POETRY_VIRTUALENVS_IN_PROJECT=true`
   - [ ] Copy `.venv` dir from build stage to final
+  - [ ] Remove `*.pyc` files from `.venv`: `RUN find /app/.venv -name '*.pyc' -delete` (this reduces image size by ~10%)
+  - [ ] Remove `pip`, `setuptools` and `wheel` from `.venv`
+  - [ ] Remove `*.pyc`, `ensurepip`, `lib2to3` and `distutils` from final image
 - [ ] Use `--no-dev` key
 - [ ] Use `--no-root` key
 
