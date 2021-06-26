@@ -60,7 +60,7 @@ better development experience and allow to speed up CI cycle.
   - [ ] For bash: `SHELL ["/bin/bash", "-Eeuo", "pipefail", "-c"]`
   - [ ] For ash (alpine): `SHELL ["/bin/ash", "-eo", "pipefail", "-c"]`
 - [ ] Use CI tool to build and publish image
-- [ ] Do **not** use `latest` tag, always explicitly tag images
+- [ ] Do **not** use `latest` tag, always explicitly tag images (see [1](https://vsupalov.com/docker-better-image-tags/) and [2](https://vsupalov.com/docker-latest-tag/))
 
 ## Security
 
