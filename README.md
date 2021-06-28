@@ -74,6 +74,8 @@ that allow to escape attacks.
 - [ ] Use trusted base images
 - [ ] Build using unprivileged user
 - [ ] Run final process from unprivileged user ([Dockerfile](examples/Dockerfile.unprivileged-user))
+- [ ] Consider using `--read-only` flag
+- [ ] Make secrets unavailable to unprivileged users on host system
 
 ## Usability
 
