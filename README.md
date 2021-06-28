@@ -9,6 +9,7 @@
 - [ ] [Improve usability](#usablitiy)
 - [ ] [Setup linting](#linting)
 - [ ] [Deploy right](#deploy)
+- [ ] [Provide documentation](#documentation)
 - [ ] See [checklists for specific tools](#specific-checklists)
   - [Apk](#apk) (Alpine Linux)
   - [Apt-get](#apt-get) (Ubuntu / Debian)
@@ -105,6 +106,21 @@ that allow to escape attacks.
 - [ ] Build image once and publish it to the registry
   - [ ] Consider using a [private registry](https://hub.docker.com/_/registry)
 - [ ] Consider using [watchtower](https://github.com/containrrr/watchtower) to automate deploy
+
+## Documentation
+
+> Make users (including future yourself) suffer less using your image
+
+- [ ] Have a nice `README.md` file, like [official images](https://hub.docker.com/_/docker) have
+- [ ] Update it automatically with [dockerhub-description](https://github.com/peter-evans/dockerhub-description)
+- [ ] Add badges
+  - [ ] CI pipeline status
+  - [ ] Image size
+  - [ ] Layers count
+  - [ ] DockerHub stars
+  - [ ] DockerHub pulls
+  - [ ] DockerHub latest version
+  - Find more at [shields.io](https://shields.io/) and [badgen.net](https://badgen.net/).
 
 ## Running
 
