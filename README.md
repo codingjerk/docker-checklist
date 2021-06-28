@@ -114,6 +114,7 @@ that allow to escape attacks.
   - [ ] Set CPU usage priority: `--cpu-shares=512` (see [documentation](https://docs.docker.com/engine/reference/run/#cpu-share-constraint))
   - [ ] Set I/O priority: `--blkio-weight=100` (see [documentation](https://docs.docker.com/engine/reference/run/#block-io-bandwidth-blkio-constraint))
   - [ ] Configure log rotation [globally](examples/docker.logging.json) or [per-container](examples/logging.bash)
+  - [ ] Make sure you have good PID 1 (or use `--init`) to prevent zombie processes
 
 ## Specific Сhecklists
 
