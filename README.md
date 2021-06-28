@@ -8,6 +8,7 @@
 - [ ] [Improve security](#security)
 - [ ] [Improve usability](#usablitiy)
 - [ ] [Setup linting](#linting)
+- [ ] [Deploy right](#deploy)
 - [ ] See [checklists for specific tools](#specific-checklists)
   - [Apk](#apk) (Alpine Linux)
   - [Apt-get](#apt-get) (Ubuntu / Debian)
@@ -95,6 +96,15 @@ that allow to escape attacks.
 - [ ] Use [hadolint](https://hadolint.github.io/)
 - [ ] Run linting in CI pipeline
 - [ ] Lint your `entrypoint`, `healthcheck` and other scripts
+
+## Deploy
+
+> Then it comes to deploy on the production
+
+- [ ] Have single image for QA/Staging/Produciton
+- [ ] Build image once and publish it to the registry
+  - [ ] Consider using a [private registry](https://hub.docker.com/_/registry)
+- [ ] Consider using [watchtower](https://github.com/containrrr/watchtower) to automate deploy
 
 ## Running
 
