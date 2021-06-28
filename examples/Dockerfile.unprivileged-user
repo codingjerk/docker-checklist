@@ -7,5 +7,5 @@ USER app
 # Alpine example
 FROM alpine:3.14
 
-RUN addgroup -S app && adduser -S -G app app
+RUN addgroup -S app && adduser -D -S -G app app
 USER app
