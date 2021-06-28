@@ -57,6 +57,7 @@ better development experience and allow to speed up CI cycle.
   - [ ] See [checklists for specific tools](#specific-checklists)
 - [ ] Use shell with addtional flags to impruve robustness
   - See [The Eeuo pipefail option and best practice to write a shell script](https://transang.me/best-practice-to-make-a-shell-script/)
+  - [ ] Use `set -Eeuo pipefail` in all bash scripts (e.g. in `ENTRYPOINT`)
   - [ ] For bash: `SHELL ["/bin/bash", "-Eeuo", "pipefail", "-c"]`
   - [ ] For ash (alpine): `SHELL ["/bin/ash", "-eo", "pipefail", "-c"]`
 - [ ] Use CI tool to build and publish image
