@@ -25,7 +25,7 @@ you should do steps below only in final stage.
 You can still reduce size of images of build stages,
 but it's not so important.
 
-- [ ] Use **alpine**
+- [ ] Use **alpine** ([except for python](https://pythonspeed.com/articles/alpine-docker-python/))
 - [ ] Use [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [ ] Use *whitelist* [dockerignore](examples/.dockerignore)
 - [ ] Reduce number of image layers
@@ -51,7 +51,7 @@ better development experience and allow to speed up CI cycle.
   - Use `VOLUME` instuction to store state in volumes
   - Settings should be provided via environment variables when container is running
 - [ ] Add [healthchecks](examples/Dockerfile.healthcheck)
-  - [ ] Ensure healthcheck exit code either 0 (healthy) or 1 (unhealthy)
+  - [ ] Ensure healthcheck exit code is either 0 (healthy) or 1 (unhealthy)
   - [ ] Use [autoheal](https://github.com/willfarrell/docker-autoheal)
 - [ ] Pin _virtually all_ versions
   - [ ] Explicitly specify base image version
