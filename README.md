@@ -173,7 +173,7 @@ that allow to escape attacks.
 
 - [ ] Pin versions of all packages in `requrements.txt` (use `pip freeze`)
 - [ ] Do not check for pip version on start: `PIP_DISABLE_PIP_VERSION_CHECK=yes`
-- [ ] Disable cache: 'PIP_NO_CACHE_DIR=yes'
+- [ ] Disable cache: `PIP_NO_CACHE_DIR=yes`
 - [ ] Use `PIP_DEFAULT_TIMEOUT=120` to prevent `ConnectTimeoutError`
 
 #### Poetry
