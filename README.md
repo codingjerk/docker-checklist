@@ -182,8 +182,10 @@ that allow to escape attacks.
 
 - [ ] Pin version: `POETRY_VERSION=1.16.0`
 - [ ] Disable interactivity: `POETRY_NO_INTERACTION=true`
-- [ ] Install in recommended way:
-  - `RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3 -`
+- [ ] Install in recommended and secure way with checksum check:
+  - `curl -sSL https://install.python-poetry.org -o install-poetry.py`
+  - `echo "$POETRY_HASHSUM install-poetry.py" | sha256sum --check`
+  - `python3 install-poetry.py`
 - [ ] Store virtualenvs in project's root: `POETRY_VIRTUALENVS_IN_PROJECT=true`
   - [ ] Copy `.venv` dir from build stage to final
   - [ ] Remove `*.pyc` files from `.venv`: `RUN find /app/.venv -name '*.pyc' -delete` (this reduces image size by ~10%)
