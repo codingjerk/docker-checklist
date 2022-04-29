@@ -158,7 +158,7 @@ that allow to escape attacks.
 - [ ] Use `--no-install-recommends` key
 - [ ] Use `--yes` key
 - [ ] Remove redundant state information: `rm -rf /var/lib/apt/lists/*`
-- [ ] Pin versions (`apt-get install --yes `)
+- [ ] Pin versions (`apt-get install <package>=<version>`)
   - Use `apt-cache madison <package>` to get available versions
 
 ### Python
