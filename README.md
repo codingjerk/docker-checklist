@@ -191,6 +191,7 @@ that allow to escape attacks.
   - [ ] Remove `*.pyc` files from `.venv`: `RUN find /app/.venv -name '*.pyc' -delete` (this reduces image size by ~10%)
   - [ ] Remove `pip`, `setuptools` and `wheel` from `.venv`
   - [ ] Remove `*.pyc`, `ensurepip`, `lib2to3` and `distutils` from final image
+  - [ ] Do not copy to main image (or remove from builder image) poetry files: `pyproject.toml` and `poetry.lock`
 - [ ] Use `--no-dev` key
 - [ ] Use `--no-root` key
 
