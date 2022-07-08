@@ -28,6 +28,7 @@ but it's not so important.
 - [ ] Use **alpine** ([except for python](https://pythonspeed.com/articles/alpine-docker-python/))
 - [ ] Use [multi-stage builds](https://docs.docker.com/develop/develop-images/multistage-build/)
 - [ ] Use *whitelist* [dockerignore](examples/.dockerignore)
+  - [ ] Alternatively, use [this dockerignore](https://github.com/themattrix/python-pypi-template/blob/master/.dockerignore)
 - [ ] Reduce number of image layers
   - [ ] Combine repeated commands (`RUN` with `\ &&`, `ENV` with ` \`, etc.)
 
