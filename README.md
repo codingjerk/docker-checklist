@@ -58,7 +58,7 @@ better development experience and allow to speed up CI cycle.
   - [ ] Explicitly specify base image version
   - [ ] Use [lock files](https://myers.io/2019/01/13/what-is-the-purpose-of-a-lock-file-for-package-managers)
   - [ ] See [checklists for specific tools](#specific-checklists)
-- [ ] Use shell with addtional flags to impruve robustness
+- [ ] Use shell with addtional flags to improve robustness
   - See [The Eeuo pipefail option and best practice to write a shell script](https://transang.me/best-practice-to-make-a-shell-script/)
   - [ ] Use `set -Eeuo pipefail` in all bash scripts (e.g. in `ENTRYPOINT`)
   - [ ] For bash: `SHELL ["/bin/bash", "-Eeuo", "pipefail", "-c"]`
