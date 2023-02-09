@@ -122,6 +122,7 @@ that allow to escape attacks.
   - [ ] DockerHub pulls
   - [ ] DockerHub latest version
   - Find more at [shields.io](https://shields.io/) and [badgen.net](https://badgen.net/).
+- [ ] Define opencontainers [annotations](https://github.com/opencontainers/image-spec/blob/main/annotations.md) as labels
 
 ## Running
 
