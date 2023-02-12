@@ -146,6 +146,29 @@ that allow to escape attacks.
 
 ## Specific Сhecklists
 
+### Compose
+
+> `docker-compose.yml` is the way to specify multiple services
+
+- [ ] Specify compose version
+- [ ] Service names as what they are, not what they use (e.g. *database* instead of *postgres*, *api* instead of *fastapi*)
+- [ ] Configure services
+  - [ ] Pin image versions
+  - [ ] Configure log rotation for background services
+  - [ ] Limit resource usage if necessary via `mem_limit`
+    - [ ] Split critical services from utility and limit cpu and IO usage
+          with `blkio_config.weight` and `cpu_shares`
+  - [ ] Specify listen address for `ports`
+  - [ ] Specify `restart`
+  - [ ] Specify service dependencies (`depends_on`)
+  - [ ] Use `read_only` if possible
+  - [ ] Use yaml anchors to extract common parts
+- [ ] Split special services
+  - [ ] Specify one-shot tasks in separate profile
+  - [ ] Specify debug tasks in separate profile
+  - [ ] Specify development compose
+- [ ] Lint docker-compose files with `yamllint`
+
 ### Apk
 
 > Alpine package manager
@@ -199,4 +222,8 @@ that allow to escape attacks.
 
 ### Rust
 
-- [ ] Use [cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/)
+- [ ] Use [cargo-chef](https://www.lpalmieri.com/posts/fast-rust-docker-builds/) for `cargo build`
+
+### Postgres
+
+- [ ] Increase `shm_size`
