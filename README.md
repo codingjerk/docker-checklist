@@ -6,7 +6,7 @@
 - [ ] [Keep build fast](#performance)
 - [ ] [Make build reproducible](#robustness)
 - [ ] [Improve security](#security)
-- [ ] [Improve usability](#usablitiy)
+- [ ] [Improve usability](#usability)
 - [ ] [Setup linting](#linting)
 - [ ] [Deploy right](#deploy)
 - [ ] [Provide documentation](#documentation)
@@ -31,6 +31,7 @@ but it's not so important.
   - [ ] Alternatively, use [this dockerignore](https://github.com/themattrix/python-pypi-template/blob/master/.dockerignore)
 - [ ] Reduce number of image layers
   - [ ] Combine repeated commands (`RUN` with `\ &&`, `ENV` with ` \`, etc.)
+    - *Note:* sometimes this is in conflict with [build time](#performance)
 
 ## Performance
 
@@ -49,7 +50,7 @@ better development experience and allow to speed up CI cycle.
 > Making build process reproducible and error prune
 
 - [ ] Make container stateless and universal
-  - Use `VOLUME` instuction to store state in volumes
+  - Use `VOLUME` instruction to store state in volumes
   - Settings should be provided via environment variables when container is running
 - [ ] Add [healthchecks](examples/Dockerfile.healthcheck)
   - [ ] Ensure healthcheck exit code is either 0 (healthy) or 1 (unhealthy)
@@ -58,7 +59,7 @@ better development experience and allow to speed up CI cycle.
   - [ ] Explicitly specify base image version
   - [ ] Use [lock files](https://myers.io/2019/01/13/what-is-the-purpose-of-a-lock-file-for-package-managers)
   - [ ] See [checklists for specific tools](#specific-checklists)
-- [ ] Use shell with addtional flags to improve robustness
+- [ ] Use shell with additional flags to improve robustness
   - See [The Eeuo pipefail option and best practice to write a shell script](https://transang.me/best-practice-to-make-a-shell-script/)
   - [ ] Use `set -Eeuo pipefail` in all bash scripts (e.g. in `ENTRYPOINT`)
   - [ ] For bash: `SHELL ["/bin/bash", "-Eeuo", "pipefail", "-c"]`
@@ -75,7 +76,7 @@ itself, but there are vulnerabilities in docker daemon itself,
 that allow to escape attacks.
 
 - [ ] Use trusted base images
-- [ ] Build using unprivileged user
+- [ ] Build using unprivileged user (check out [podman](https://podman.io/))
 - [ ] Run final process from unprivileged user ([Dockerfile](examples/Dockerfile.unprivileged-user))
 - [ ] Consider using `--read-only` flag
 - [ ] Make secrets unavailable to unprivileged users on host system
@@ -88,7 +89,7 @@ that allow to escape attacks.
   - [ ] Prefer common, traditional ports
   - [ ] Use port 8080 for http (see [List of TCP and UDP port numbers](https://www.wikiwand.com/en/List_of_TCP_and_UDP_port_numbers))
 - [ ] Add a development image
-  - Mount source direcory to development container as running
+  - Mount source directory to development container as running
   - Enable *debug mode*, *autoreload*, increase log verbosity
 
 ## Linting
@@ -103,7 +104,7 @@ that allow to escape attacks.
 
 > Then it comes to deploy on the production
 
-- [ ] Have single image for QA/Staging/Produciton
+- [ ] Have single image for QA/Staging/Production
 - [ ] Build image once and publish it to the registry
   - [ ] Consider using a [private registry](https://hub.docker.com/_/registry)
 - [ ] Consider using [watchtower](https://github.com/containrrr/watchtower) to automate deploy
@@ -186,6 +187,16 @@ that allow to escape attacks.
 - [ ] Pin versions (`apt-get install <package>=<version>`)
   - Use `apt-cache madison <package>` to get available versions
 
+### Pacman
+
+> Arch Linux package manager
+
+**WARNING:** Arch Linux is not recommended as a base image
+
+- [ ] Update system: `pacman -Syu`
+- [ ] Use `--noconfirm` option
+- [ ] Cleanup package cache after installation: `rm -rf /var/cache/pacman/pkg/*`
+
 ### Python
 
 - [ ] Use [faulthandler](https://docs.python.org/3/library/faulthandler.html): `PYTHONFAULTHANDLER=yes`
@@ -196,7 +207,7 @@ that allow to escape attacks.
 
 > Python package manager
 
-- [ ] Pin versions of all packages in `requrements.txt` (use `pip freeze`)
+- [ ] Pin versions of all packages in `requirements.txt` (use `pip freeze`)
 - [ ] Do not check for pip version on start: `PIP_DISABLE_PIP_VERSION_CHECK=yes`
 - [ ] Disable cache: `PIP_NO_CACHE_DIR=yes`
 - [ ] Use `PIP_DEFAULT_TIMEOUT=120` to prevent `ConnectTimeoutError`
